@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Projects | Portfolio</title>
+
+    <!-- Existing Grayscale stylesheet -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .projects-header {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 20px 80px;
+            background: linear-gradient(to bottom, #161616, #000);
+        }
+
+        .projects-header h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .projects-header p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .projects-section {
+            padding: 60px 0 100px;
+            background-color: #000;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .project-card {
+            height: 100%;
+            background-color: #161616;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #64a19d;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-category {
+            color: #64a19d;
+            text-transform: uppercase;
+            letter-spacing: 0.12rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .project-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .project-content p {
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive project image gallery */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            padding: 12px;
+        }
+
+        .project-gallery img {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #252525;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-gallery img:hover {
+            opacity: 0.8;
+        }
+
+        .projects-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 22px;
+            background-color: #64a19d;
+            color: #fff;
+            border: none;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .projects-btn:hover {
+            background-color: #558985;
+            color: #fff;
+        }
+
+        .back-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #101010;
+        }
+
+        .back-section h2 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .back-section p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 25px;
+        }
+
+        footer {
+            padding: 35px 15px;
+            text-align: center;
+            background-color: #000;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 576px) {
+            .projects-header h1 {
+                letter-spacing: 0.2rem;
+            }
+
+            .project-gallery img {
+                height: 135px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+         id="mainNav">
+
+        <div class="container px-4 px-lg-5">
+
+            <a class="navbar-brand" href="index.html">
+                MY PORTFOLIO
+            </a>
+
+            <button class="navbar-toggler navbar-toggler-right"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive"
+                    aria-controls="navbarResponsive"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse"
+                 id="navbarResponsive">
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           aria-current="page"
+                           href="projects.html">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Page Header -->
+    <header class="projects-header">
+        <div class="container px-4 px-lg-5">
+            <h1>My Projects</h1>
+
+            <p>
+                A collection of my projects, technical skills,
+                and experiences in Computer Engineering.
+            </p>
+        </div>
+    </header>
+
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container px-4 px-lg-5">
+
+            <div class="section-heading">
+                <h2>Featured Projects</h2>
+                <p>Explore some of the projects I have worked on.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- PROJECT 1: MEDICATION DISPENSER -->
+                <div class="col-12 col-lg-7">
+                    <div class="project-card">
+
+                        <div class="project-content">
+                            <span class="project-category">
+                                Automation / IoT
+                            </span>
+
+                            <h3>Automated Medication Dispenser</h3>
+
+                            <p>
+                                An IoT-based medication scheduling and
+                                dispensing system designed to help users
+                                manage medication schedules and support
+                                timely medication intake.
+                            </p>
+                        </div>
+
+                        <!-- Six medication dispenser pictures -->
+                        <div class="project-gallery">
+
+                            <img
+                                src="assets/img/amsad1.jpg"
+                                alt="Medication dispenser project picture 1"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="assets/img/amsad2.jpg"
+                                alt="Medication dispenser project picture 2"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="assets/img/amsad3.jpg"
+                                alt="Medication dispenser project picture 3"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="assets/img/amsad4.jpg"
+                                alt="Medication dispenser project picture 4"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="assets/img/amsad5.jpg"
+                                alt="Medication dispenser project picture 5"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="assets/img/amsad6.jpg"
+                                alt="Medication dispenser project picture 6"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="project-content">
+                            <a href="#"
+                               class="projects-btn">
+                                View Project Details
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- PROJECT 2: NOISE DETECTOR -->
+                <div class="col-12 col-lg-5">
+                    <div class="project-card">
+
+                        <div class="project-content">
+                            <span class="project-category">
+                                Arduino / Electronics
+                            </span>
+
+                            <h3>Noise Monitoring System</h3>
+
+                            <p>
+                                An Arduino-based noise monitoring system
+                                that detects noise levels, provides
+                                visual and audible alerts, and uses GSM
+                                technology to send SMS notifications
+                                when noise reaches a high level.
+                            </p>
+                        </div>
+
+                        <!-- Two noise detector pictures -->
+                        <div class="project-gallery">
+
+                            <img
+                                src="assets/img/noisedetector1.jpg"
+                                alt="Noise monitoring project picture 1"
+                                loading="lazy"
+                            >
+
+                            <img
+                                src="assets/img/noisedetector2.jpg"
+                                alt="Noise monitoring project picture 2"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="project-content">
+                            <a href="#"
+                               class="projects-btn">
+                                View Project Details
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Back to Home -->
+    <section class="back-section">
+        <h2>Want to Know More?</h2>
+
+        <p>
+            Visit my main portfolio to learn more about me.
+        </p>
+
+        <a href="index.html" class="projects-btn">
+            Back to Home
+        </a>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">
+                Copyright &copy; My Portfolio 2026
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
